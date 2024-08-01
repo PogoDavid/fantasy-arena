@@ -1,0 +1,176 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    margin: auto;
+    overflow-y: auto;
+    max-height: 90%;
+  }
+  
+  .modal h2 {
+    margin-top: 0;
+  }
+  
+  .modal h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .player-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  
+  .player-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+  }
+  
+  .player-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .player-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .player-photo-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-bottom: 5px;
+  }
+  
+  .club-logo-placeholder {
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+  }
+  
+  .player-details {
+    flex-grow: 1;
+    font-size: 10px;
+    color: #333;
+  }
+  
+  .player-details h3 {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .recent-performance {
+    margin-top: 5px;
+  }
+  
+  .recent-performance h4 {
+    margin-bottom: 5px;
+    font-size: 10px;
+  }
+  
+  .performance-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .game-performance {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .opponent-logo-placeholder {
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+  }
+  
+  .performance-indicators {
+    display: flex;
+    gap: 2px;
+  }
+  
+  .goal-indicator, .assist-indicator, .yellow-card-indicator, .red-card-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  
+  .goal-indicator {
+    background-color: #4caf50;
+  }
+  
+  .assist-indicator {
+    background-color: #2196f3;
+  }
+  
+  .yellow-card-indicator {
+    background-color: #ffeb3b;
+  }
+  
+  .red-card-indicator {
+    background-color: #f44336;
+  }
+  
+  .modal button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    font-size: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,14 @@
+.welcome-section {
+    text-align: center;
+    margin: 20px 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .welcome-section h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+  
