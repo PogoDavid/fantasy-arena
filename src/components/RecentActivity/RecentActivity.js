@@ -1,12 +1,15 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import './RecentActivity.css';
 
 function RecentActivity() {
+  const { t } = useTranslation();
+
   return (
     <Card className="recent-activity-card">
       <CardContent>
-        <Typography variant="h5">Recent Activity</Typography>
+        <Typography variant="h5">{t('recentActivity')}</Typography>
         <Typography variant="body2" color="textSecondary" component="p">
           You joined League 1
         </Typography>

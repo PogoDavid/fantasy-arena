@@ -12,8 +12,8 @@ function Dashboard() {
     <div className="dashboard">
       <Navbar />
       <WelcomeSection />
+      <LeagueActions />
       <div className="dashboard-content">
-        <LeagueActions />
         <CurrentLeagues />
         <RecentActivity />
         <NotificationsAndUpdates />

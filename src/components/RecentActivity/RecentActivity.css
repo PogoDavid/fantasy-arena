@@ -1,27 +1,22 @@
 .recent-activity-card {
-  background-color: #ffffff;
-  color: #333;
+  background-color: #ffffff; 
+  color: #333; 
   padding: 20px;
-  margin: 0;
+  margin: 0; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 100%; 
-  height: 300px; 
-  overflow-y: auto; 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 38%; 
+  height: 400px;
+  overflow-y: auto !important; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
   display: flex;
   flex-direction: column;
 }
 
-.recent-activity-card .MuiCardContent-root {
-  flex: 1;
-  overflow-y: auto;
-}
-
 .recent-activity-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
 .recent-activity-card::-webkit-scrollbar {
@@ -37,6 +32,8 @@
   background-color: #f1f1f1;
   border-radius: 10px;
 }
+
+
 
 
 

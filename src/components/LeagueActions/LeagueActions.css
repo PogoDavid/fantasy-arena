@@ -1,20 +1,21 @@
 .league-actions {
-    text-align: center;
-    margin: 20px;
+  text-align: center;
+  margin: 20px;
 }
 
 .league-button {
-    background-color: #2980b9;
-    color: #ffffff;
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px;
-    transition: background-color 0.3s ease;
+  background-color: #2980b9;
+  color: #ffffff;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .league-button:hover {
-    background-color: #1abc9c; 
+  background-color: #1abc9c; 
 }
+

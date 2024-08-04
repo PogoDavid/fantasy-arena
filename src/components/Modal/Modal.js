@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Modal.css';
 
 const Modal = ({ show, onClose, onSetup }) => {
+  const { t } = useTranslation();
   const [selectedFormation, setSelectedFormation] = useState('4-3-3');
   const [budget, setBudget] = useState('');
 
@@ -13,7 +15,7 @@ const Modal = ({ show, onClose, onSetup }) => {
       onSetup(selectedFormation, budget);
       onClose();
     } else {
-      alert('Please enter a valid budget');
+      alert(t('invalidBudget'));
     }
   };
 
@@ -24,8 +26,8 @@ const Modal = ({ show, onClose, onSetup }) => {
           &times;
         </button>
         <form className="formation-setup" onSubmit={handleSubmit}>
-          <h2>Select Your Team Formation and Set Budget</h2>
-          <label htmlFor="formation">Formation:</label>
+          <h2>{t('selectFormation')}</h2>
+          <label htmlFor="formation">{t('formation')}:</label>
           <select
             id="formation"
             value={selectedFormation}
@@ -36,7 +38,7 @@ const Modal = ({ show, onClose, onSetup }) => {
             <option value="3-5-2">3-5-2</option>
             <option value="4-2-3-1">4-2-3-1</option>
           </select>
-          <label htmlFor="budget">Budget:</label>
+          <label htmlFor="budget">{t('budget')}:</label>
           <input
             type="number"
             id="budget"
@@ -44,7 +46,7 @@ const Modal = ({ show, onClose, onSetup }) => {
             value={budget}
             onChange={(e) => setBudget(e.target.value)}
           />
-          <button type="submit">Setup Team</button>
+          <button type="submit">{t('setupTeam')}</button>
         </form>
       </div>
     </div>

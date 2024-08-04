@@ -1,6 +1,6 @@
 const formations = {
     '4-3-3': {
-      gk: { column: '12 / span 2', row: '10' },
+      gk: { column: '13 / span 2', row: '10' },
       def1: { column: '6 / span 2', row: '7' },
       def2: { column: '11 / span 2', row: '7' },
       def3: { column: '15 / span 2', row: '7' },
@@ -18,9 +18,9 @@ const formations = {
     def2: { column: '11 / span 2', row: '7' },
     def3: { column: '15 / span 2', row: '7' },
     def4: { column: '20 / span 2', row: '7' },
-    mid1: { column: '7 / span 2', row: '4.5' },
-    mid2: { column: '11 / span 2', row: '4.5' },
-    mid3: { column: '15 / span 2', row: '4.5' }, 
+    mid1: { column: '7 / span 2', row: '4' },
+    mid2: { column: '11 / span 2', row: '4' },
+    mid3: { column: '15 / span 2', row: '4' }, 
     mid4: { column: '19 / span 2', row: '4' },
     fwd1: { column: '10 / span 2', row: '2' },
     fwd2: { column: '15 / span 2', row: '2' },
@@ -39,17 +39,17 @@ const formations = {
       fwd2: { column: '14 / span 2', row: '2' },
     },
     '4-2-3-1': {
-      gk: { column: '12 / span 2', row: '10' },
+      gk: { column: '13 / span 2', row: '10' },
       def1: { column: '6 / span 2', row: '8' },
       def2: { column: '11 / span 2', row: '8' },
       def3: { column: '15 / span 2', row: '8' },
       def4: { column: '20 / span 2', row: '8' },
       mid1: { column: '11 / span 2', row: '6' },
       mid2: { column: '15 / span 2', row: '6' },
-      cam1: { column: '9 / span 2', row: '4' },
-      cam2: { column: '13 / span 2', row: '4' },
-      cam3: { column: '17 / span 2', row: '4' },
-      fwd: { column: '13 / span 2', row: '2' },
+      cam1: { column: '9 / span 2', row: '3' },
+      cam2: { column: '13 / span 2', row: '3' },
+      cam3: { column: '17 / span 2', row: '3' },
+      fwd: { column: '13 / span 2', row: '1' },
     },
   };
   

@@ -2,7 +2,7 @@
   background: url('../../assets/images/Dashboard-background1.png') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
-  padding-top: 64px; 
+  padding-top: 64px;
   color: #fff;
   overflow-y: auto;
 }
@@ -10,20 +10,17 @@
 .dashboard-content {
   display: flex;
   justify-content: space-around;
-  align-items: stretch; 
+  align-items: flex-start;
   width: 100%;
-  max-width: 1500px; 
-  margin-top: 60px; 
+  max-width: 1500px;
+  margin-top: 20px;
   padding: 0 20px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .dashboard-content > div {
   flex: 1;
-  margin: 0 20px;
-  min-width: 400px;
+  margin: 20px;
+  min-width: 250px;
 }
 
-.remaining-budget, .buttons {
-  display: none;
-}

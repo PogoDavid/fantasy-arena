@@ -17,7 +17,7 @@ function App() {
           <Route path="/draft" element={<Draft />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Draft />} />
         </Routes>
       </div>
     </Router>

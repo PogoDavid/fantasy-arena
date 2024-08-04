@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { recommendedPlayers } from '../../data/mockData';
+import { useTranslation } from 'react-i18next';
 import './PlayerModal.css';
 
 const PlayerModal = ({ position, onClose }) => {
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
   const [players, setPlayers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,21 +29,21 @@ const PlayerModal = ({ position, onClose }) => {
   );
 
   if (loading) {
-    return <div className="modal">Loading...</div>;
+    return <div className="modal">{t('loading')}</div>;
   }
 
   return (
     <div className="modal">
       <div className="modal-content">
-        <h2>Select a Player for {position.toUpperCase()}</h2>
+        <h2>{t('selectPlayer', { position: position.toUpperCase() })}</h2>
         <input
           type="text"
-          placeholder="Search for a player..."
+          placeholder={t('searchPlayer')}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-input"
         />
-        <h3>Top Recommended Players</h3>
+        <h3>{t('topRecommendedPlayers')}</h3>
         <ul className="player-list">
           {filteredPlayers.map(player => (
             <li key={player.id} className="player-item">
@@ -52,13 +54,13 @@ const PlayerModal = ({ position, onClose }) => {
                 </div>
                 <div className="player-details">
                   <h3>{player.name}</h3>
-                  <p>Price: ${player.price}M</p>
-                  <p>Goals: {player.goals}, Assists: {player.assists}</p>
-                  <p>Matches: {player.matches}, Avg. Rating: {player.avgRating}</p>
-                  <p>Yellow Cards: {player.yellowCards}, Red Cards: {player.redCards}</p>
+                  <p>{t('price')}: ${player.price}MM</p>
+                  <p>{t('goals')}: {player.goals}, {t('assists')}: {player.assists}</p>
+                  <p>{t('matches')}: {player.matches}, {t('avgRating')}: {player.avgRating}</p>
+                  <p>{t('yellowCards')}: {player.yellowCards}, {t('redCards')}: {player.redCards}</p>
                 </div>
                 <div className="recent-performance">
-                  <h4>Last 5 Games</h4>
+                  <h4>{t('lastFiveGames')}</h4>
                   <div className="performance-icons">
                     {player.lastFiveGames.map((game, index) => (
                       <div key={index} className="game-performance">
@@ -73,12 +75,12 @@ const PlayerModal = ({ position, onClose }) => {
                     ))}
                   </div>
                 </div>
-                <button onClick={() => handlePlayerSelect(player)}>Select</button>
+                <button onClick={() => handlePlayerSelect(player)}>{t('select')}</button>
               </div>
             </li>
           ))}
         </ul>
-        <button onClick={onClose}>Close</button>
+        <button onClick={onClose}>{t('close')}</button>
       </div>
     </div>
   );
