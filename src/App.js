@@ -17,7 +17,7 @@ function App() {
           <Route path="/draft" element={<Draft />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/" element={<Draft />} />
+          <Route path="/" element={<CreateLeague />} />
         </Routes>
       </div>
     </Router>

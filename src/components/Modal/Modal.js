@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import './Modal.css';
 
-const Modal = ({ show, onClose, onSetup }) => {
+function Modal({ show, onClose, onSetup }) {
   const { t } = useTranslation();
   const [selectedFormation, setSelectedFormation] = useState('4-3-3');
   const [budget, setBudget] = useState('');
@@ -22,12 +23,15 @@ const Modal = ({ show, onClose, onSetup }) => {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose}>
+        <button type="button" className="modal-close" onClick={onClose}>
           &times;
         </button>
         <form className="formation-setup" onSubmit={handleSubmit}>
           <h2>{t('selectFormation')}</h2>
-          <label htmlFor="formation">{t('formation')}:</label>
+          <label htmlFor="formation">
+            {t('formation')}
+            :
+          </label>
           <select
             id="formation"
             value={selectedFormation}
@@ -38,7 +42,10 @@ const Modal = ({ show, onClose, onSetup }) => {
             <option value="3-5-2">3-5-2</option>
             <option value="4-2-3-1">4-2-3-1</option>
           </select>
-          <label htmlFor="budget">{t('budget')}:</label>
+          <label htmlFor="budget">
+            {t('budget')}
+            :
+          </label>
           <input
             type="number"
             id="budget"
@@ -51,7 +58,12 @@ const Modal = ({ show, onClose, onSetup }) => {
       </div>
     </div>
   );
+}
+
+Modal.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  onSetup: PropTypes.func.isRequired,
 };
 
 export default Modal;
-

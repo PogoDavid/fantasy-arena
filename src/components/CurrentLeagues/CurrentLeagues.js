@@ -1,5 +1,7 @@
 import React from 'react';
-import { Card, CardContent, Typography, Grid } from '@mui/material';
+import {
+  Card, CardContent, Typography, Grid,
+} from '@mui/material';
 import './CurrentLeagues.css';
 import { useTranslation } from 'react-i18next';
 

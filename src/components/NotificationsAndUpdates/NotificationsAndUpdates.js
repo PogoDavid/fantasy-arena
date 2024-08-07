@@ -5,13 +5,23 @@ import './NotificationsAndUpdates.css';
 
 function NotificationsAndUpdates() {
   const { t } = useTranslation();
+
+  const notifications = Array.from({ length: 20 }, (_, index) => ({
+    id: `notif-${index + 1}`,
+    message: t('notification', { number: index + 1 }),
+  }));
   return (
     <Card className="notifications-card">
       <CardContent>
         <Typography variant="h5">{t('notificationsAndUpdates')}</Typography>
-        {Array.from({ length: 20 }).map((_, index) => (
-          <Typography variant="body2" color="textSecondary" component="p" key={index}>
-            {t('notification', { number: index + 1 })}
+        {notifications.map((notification) => (
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+            key={notification.id}
+          >
+            {notification.message}
           </Typography>
         ))}
       </CardContent>

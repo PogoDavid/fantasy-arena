@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './PitchLayout.css';
+import PropTypes from 'prop-types';
 import formations from '../../data/formations';
 import PlayerModal from '../PlayerModal/PlayerModal';
 
-const PitchLayout = ({ formation }) => {
+function PitchLayout({ formation }) {
   const [selectedPosition, setSelectedPosition] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const formationPositions = formations[formation] || formations['4-3-3'];
@@ -26,17 +27,17 @@ const PitchLayout = ({ formation }) => {
         </div>
       ))}
       {isModalOpen && (
-        <PlayerModal 
-          position={selectedPosition} 
-          onClose={() => setIsModalOpen(false)} 
+        <PlayerModal
+          position={selectedPosition}
+          onClose={() => setIsModalOpen(false)}
         />
       )}
     </div>
   );
+}
+
+PitchLayout.propTypes = {
+  formation: PropTypes.string.isRequired,
 };
 
 export default PitchLayout;
-
-
-
-
