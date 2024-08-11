@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { recommendedPlayers } from '../../data/mockData';
+import { useSelector } from 'react-redux';
 import './PlayerModal.css';
 
 function PlayerModal({ position, onClose }) {
   const { t } = useTranslation();
-  const [loading, setLoading] = useState(true);
-  const [players, setPlayers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+
+  const recommendedPlayers = useSelector(
+    (state) => state.mockData.recommendedPlayers
+  );
 
   const getPlayerKey = (pos) => {
     if (pos.toLowerCase().includes('def')) return 'defenders';
@@ -17,24 +19,17 @@ function PlayerModal({ position, onClose }) {
     return 'goalkeepers';
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      const positionKey = getPlayerKey(position);
-      setPlayers(recommendedPlayers[positionKey]);
-      setLoading(false);
-    }, 2000);
-  }, [position]);
+  const positionKey = getPlayerKey(position);
+  const players = recommendedPlayers[positionKey];
 
   const handlePlayerSelect = (player) => {
     console.log('Selected player:', player);
     onClose();
   };
 
-  const filteredPlayers = players.filter((player) => player.name.toLowerCase().includes(searchTerm.toLowerCase()));
-
-  if (loading) {
-    return <div className="modal">{t('loading')}</div>;
-  }
+  const filteredPlayers = players.filter((player) =>
+    player.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="modal">
@@ -59,45 +54,18 @@ function PlayerModal({ position, onClose }) {
                 <div className="player-details">
                   <h3>{player.name}</h3>
                   <p>
-                    {t('price')}
-                    : $
-                    {player.price}
-                    MM
+                    {t('price')}: ${player.price} MM
                   </p>
                   <p>
-                    {t('goals')}
-                    :
-                    {' '}
-                    {player.goals}
-                    ,
-                    {' '}
-                    {t('assists')}
-                    :
-                    {' '}
+                    {t('goals')}: {player.goals}, {t('assists')}:{' '}
                     {player.assists}
                   </p>
                   <p>
-                    {t('matches')}
-                    :
-                    {' '}
-                    {player.matches}
-                    ,
-                    {' '}
-                    {t('avgRating')}
-                    :
-                    {' '}
+                    {t('matches')}: {player.matches}, {t('avgRating')}:{' '}
                     {player.avgRating}
                   </p>
                   <p>
-                    {t('yellowCards')}
-                    :
-                    {' '}
-                    {player.yellowCards}
-                    ,
-                    {' '}
-                    {t('redCards')}
-                    :
-                    {' '}
+                    {t('yellowCards')}: {player.yellowCards}, {t('redCards')}:{' '}
                     {player.redCards}
                   </p>
                 </div>
@@ -105,24 +73,37 @@ function PlayerModal({ position, onClose }) {
                   <h4>{t('lastFiveGames')}</h4>
                   <div className="performance-icons">
                     {player.lastFiveGames.map((game) => (
-                      <div key={game.date} className="game-performance">
+                      <div key={game.match} className="game-performance">
                         <div className="opponent-logo-placeholder" />
                         <div className="performance-indicators">
                           {game.goals > 0 && <div className="goal-indicator" />}
-                          {game.assists > 0 && <div className="assist-indicator" />}
-                          {game.yellowCards > 0 && <div className="yellow-card-indicator" />}
-                          {game.redCards > 0 && <div className="red-card-indicator" />}
+                          {game.assists > 0 && (
+                            <div className="assist-indicator" />
+                          )}
+                          {game.yellowCards > 0 && (
+                            <div className="yellow-card-indicator" />
+                          )}
+                          {game.redCards > 0 && (
+                            <div className="red-card-indicator" />
+                          )}
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
-                <button type="button" onClick={() => handlePlayerSelect(player)}>{t('select')}</button>
+                <button
+                  type="button"
+                  onClick={() => handlePlayerSelect(player)}
+                >
+                  {t('select')}
+                </button>
               </div>
             </li>
           ))}
         </ul>
-        <button type="button" onClick={onClose}>{t('close')}</button>
+        <button type="button" onClick={onClose}>
+          {t('close')}
+        </button>
       </div>
     </div>
   );

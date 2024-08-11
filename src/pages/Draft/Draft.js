@@ -18,15 +18,17 @@ function Draft() {
 
   return (
     <div className="draft-container">
-      {showModal && <Modal show={showModal} onClose={() => setShowModal(false)} onSetup={handleSetup} />}
+      {showModal && (
+        <Modal
+          show={showModal}
+          onClose={() => setShowModal(false)}
+          onSetup={handleSetup}
+        />
+      )}
       {formation && budget && (
         <>
           <div className="remaining-budget">
-            {t('remainingBudget')}
-            :
-            {' '}
-            {budget}
-            M
+            {t('remainingBudget')}: {budget}M
           </div>
           <PitchLayout formation={formation} />
           <div className="buttons">

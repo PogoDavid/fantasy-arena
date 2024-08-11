@@ -63,14 +63,16 @@ const resources = {
       league2: 'Liga 2',
       createLeague: 'Eine Liga erstellen',
       joinLeague: 'Einer Liga beitreten',
-      selectFormation: 'Wählen Sie Ihre Teamformation und setzen Sie das Budget fest',
+      selectFormation:
+        'Wählen Sie Ihre Teamformation und setzen Sie das Budget fest',
       formation: 'Formation',
       budget: 'Budget',
       enterBudget: 'Budget eingeben',
       setupTeam: 'Team einrichten',
       invalidBudget: 'Bitte geben Sie ein gültiges Budget ein',
       notificationsAndUpdates: 'Benachrichtigungen und Updates',
-      notification: 'Benachrichtigung {{number}}: +5 Punkte: Tor durch Spieler A',
+      notification:
+        'Benachrichtigung {{number}}: +5 Punkte: Tor durch Spieler A',
       loading: 'Wird geladen...',
       selectPlayer: 'Wählen Sie einen Spieler für {{position}} aus',
       searchPlayer: 'Suche nach einem Spieler...',
@@ -104,15 +106,13 @@ const resources = {
   },
 };
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: 'en',
-    fallbackLng: 'en',
-    interpolation: {
-      escapeValue: false,
-    },
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: 'en',
+  fallbackLng: 'en',
+  interpolation: {
+    escapeValue: false,
+  },
+});
 
 export default i18n;

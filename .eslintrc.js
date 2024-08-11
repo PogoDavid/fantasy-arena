@@ -3,17 +3,24 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['airbnb', 'airbnb/hooks'],
+  extends: ['airbnb', 'airbnb/hooks', 'plugin:prettier/recommended'],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'react-hooks'],
+  plugins: ['react', 'react-hooks', 'prettier'],
+  settings: {
+    'import/core-modules': ['redux'],
+  },
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-    indent: ['error', 2],
-    'max-len': ['error', { code: 120 }],
-    'jsx-a11y/click-events-have-key-events': 'off',
-    'jsx-a11y/no-static-element-interactions': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/prefer-default-export': 'off', // or 'warn' or 'error'
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
 };

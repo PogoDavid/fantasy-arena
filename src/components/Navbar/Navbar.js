@@ -12,9 +12,15 @@ function Navbar() {
   return (
     <AppBar position="fixed" className="navbar">
       <Toolbar className="toolbar">
-        <Button color="inherit" component={Link} to="/draft">{t('draft')}</Button>
-        <Button color="inherit" component={Link} to="/profile">{t('profile')}</Button>
-        <Button color="inherit" component={Link} to="/logout">{t('logout')}</Button>
+        <Button color="inherit" component={Link} to="/draft">
+          {t('draft')}
+        </Button>
+        <Button color="inherit" component={Link} to="/profile">
+          {t('profile')}
+        </Button>
+        <Button color="inherit" component={Link} to="/logout">
+          {t('logout')}
+        </Button>
       </Toolbar>
     </AppBar>
   );

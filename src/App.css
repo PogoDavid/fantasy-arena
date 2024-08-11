@@ -1,4 +1,6 @@
-body, html, #root {
+body,
+html,
+#root {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -8,5 +10,3 @@ body, html, #root {
 .App {
   text-align: center;
 }
-
-

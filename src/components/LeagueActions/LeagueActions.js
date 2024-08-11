@@ -6,8 +6,12 @@ function LeagueActions() {
   const { t } = useTranslation();
   return (
     <div className="league-actions">
-      <button type="button" className="league-button">{t('createLeague')}</button>
-      <button type="button" className="league-button">{t('joinLeague')}</button>
+      <button type="button" className="league-button">
+        {t('createLeague')}
+      </button>
+      <button type="button" className="league-button">
+        {t('joinLeague')}
+      </button>
     </div>
   );
 }
